@@ -1,0 +1,9 @@
+ROIid,ROIabbr,ROIname
+1,frontal,os frontale
+2,occipital,os occipitale
+3,Lparietal,os parietale sinistrum
+4,Rparietal,os parietale dextrum
+5,Ltemporal,os temporale sinistrum
+6,Rtemporal,os temporale dextrum
+7,sphenoid,os sphenoidale
+8,unspec,incertus
