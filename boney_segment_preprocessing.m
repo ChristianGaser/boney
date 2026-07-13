@@ -64,7 +64,7 @@ function P = boney_segment_preprocessing(P,out,ctpm,pmethod,bias,rerun)
   if ~isempty(PC)
     switch ctpm
       case 1, Ptpm = fullfile(spm('dir'),'tpm',sprintf('TPM.nii')); 
-      case 2, Ptpm = fullfile(spm('dir'),'toolbox','cat12','templates_MNI152NLin2009cAsym',sprintf('TPM_Age11.5.nii'));
+      case 2, Ptpm = fullfile(spm_file(which('cat12'),'fpath'),'templates_MNI152NLin2009cAsym',sprintf('TPM_Age11.5.nii'));
     end
     switch pmethod
       case {1,'spm'}
@@ -183,19 +183,19 @@ function matlabbatch = CAT_preprocessing(P, Ptmp, bias, expertgui)
   matlabbatch{1}.spm.tools.cat.estwrite.extopts.segmentation.mrf          = 1;
   if expertgui == 2
     matlabbatch{1}.spm.tools.cat.estwrite.extopts.registration.T1           = ...
-      {fullfile(spm('dir'), 'toolbox', 'cat12', 'templates_MNI152NLin2009cAsym/T1.nii')};
+      {fullfile(spm_file(which('cat12'),'fpath'), 'templates_MNI152NLin2009cAsym/T1.nii')};
     matlabbatch{1}.spm.tools.cat.estwrite.extopts.registration.brainmask    = ...
-      {fullfile(spm('dir'), 'toolbox', 'cat12', 'templates_MNI152NLin2009cAsym/brainmask.nii')};
+      {fullfile(spm_file(which('cat12'),'fpath'), 'templates_MNI152NLin2009cAsym/brainmask.nii')};
     matlabbatch{1}.spm.tools.cat.estwrite.extopts.registration.cat12atlas   = ...
-      {fullfile(spm('dir'), 'toolbox', 'cat12', 'templates_MNI152NLin2009cAsym/cat.nii')};
+      {fullfile(spm_file(which('cat12'),'fpath'), 'templates_MNI152NLin2009cAsym/cat.nii')};
     matlabbatch{1}.spm.tools.cat.estwrite.extopts.registration.darteltpm    = ...
-      {fullfile(spm('dir'), 'toolbox', 'cat12', 'templates_MNI152NLin2009cAsym/Template_1_Dartel.nii')};
+      {fullfile(spm_file(which('cat12'),'fpath'), 'templates_MNI152NLin2009cAsym/Template_1_Dartel.nii')};
     matlabbatch{1}.spm.tools.cat.estwrite.extopts.registration.shootingtpm  = ...
-      {fullfile(spm('dir'), 'toolbox', 'cat12', 'templates_MNI152NLin2009cAsym/Template_0_GS.nii')};
+      {fullfile(spm_file(which('cat12'),'fpath'), 'templates_MNI152NLin2009cAsym/Template_0_GS.nii')};
     matlabbatch{1}.spm.tools.cat.estwrite.extopts.registration.regstr       = 0.5;
   else
     matlabbatch{1}.spm.tools.cat.estwrite.extopts.registration.regmethod.shooting.shootingtpm = ...
-      {fullfile(spm('dir'), 'toolbox', 'cat12', 'templates_MNI152NLin2009cAsym/Template_0_GS.nii')};
+      {fullfile(spm_file(which('cat12'),'fpath'), 'templates_MNI152NLin2009cAsym/Template_0_GS.nii')};
     matlabbatch{1}.spm.tools.cat.estwrite.extopts.registration.regmethod.shooting.regstr = 0.5;
   end
   matlabbatch{1}.spm.tools.cat.estwrite.extopts.registration.bb           = 12;
