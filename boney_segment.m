@@ -275,7 +275,7 @@ function [Pout,out] = boney_segment(job)
 
 
     if ... %cat_io_rerun(which(mfilename),out(i).P.xml) || ...
-        cat_io_rerun(out(i).P.org,out(i).P.xml,0) || job.opts.rerun 
+        cat_io_rerun(out(i).P.xml, out(i).P.org, 0) || job.opts.rerun 
 
       % == GET SPM DATA ==
       %  - get and evaluate the original SPM preprocessing structure (seg8t)
