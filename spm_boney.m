@@ -25,7 +25,7 @@ function spm_boney(expertgui)
   % Test for CAT installation 
   catdir = spm_file(which('cat12'),'fpath'); 
   if ~exist( catdir , 'dir' )
-    error('Error:noCATtoolbox','Cannot see CAT12 directory: \n%s', catdir)
+    error('Error:noCATtoolbox','Cannot see CAT directory: \n%s', catdir)
   end
   
   %% define default parameters

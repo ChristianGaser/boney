@@ -135,7 +135,7 @@ function out = cat_run_boneseg(opt)
     stime2 = clock;   
 
     if ... %cat_io_rerun(which(mfilename),out(i).P.xml) || ...
-        cat_io_rerun(out(i).P.org,out(i).P.xml,0) || opt.rerun
+        cat_io_rerun(out(i).P.xml,out(i).P.org,0) || opt.rerun
   
   
       % == GET SPM DATA ==

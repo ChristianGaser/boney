@@ -36,9 +36,9 @@ function P = boney_segment_preprocessing(P,out,ctpm,pmethod,bias,rerun)
     %% have to use CAT developer GUI for rerun function 
     oldexpertgui = cat_get_defaults('extopts.expertgui');
     cat_get_defaults('extopts.expertgui',2);
-    rpc = cat_io_rerun(PC,Ppc,0) > 0; 
-    rbc = cat_io_rerun(PC,Pbc,0) > 0; % estimate if reprocessing is required
-    rs8 = cat_io_rerun(PC,Ps8,0) > 0 & pmethod==1;
+    rpc = cat_io_rerun(Ppc,PC,0) > 0; 
+    rbc = cat_io_rerun(Pbc,PC,0) > 0; % estimate if reprocessing is required
+    rs8 = cat_io_rerun(Ps8,PC,0) > 0 & pmethod==1;
     rsc = rpc | rbc | rs8;
     if all(rsc)
       cat_io_cprintf([0 0 1],'  SPM/CAT segmentations is required. \n');
