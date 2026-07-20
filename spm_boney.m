@@ -23,7 +23,7 @@ function spm_boney(expertgui)
   global boned %#ok<GVMIS> 
   
   % Test for CAT installation 
-  catdir = fullfile( spm('dir') , 'toolbox' , 'CAT'); 
+  catdir = spm_file(which('cat12'),'fpath'); 
   if ~exist( catdir , 'dir' )
     error('Error:noCATtoolbox','Cannot see CAT directory: \n%s', catdir)
   end
